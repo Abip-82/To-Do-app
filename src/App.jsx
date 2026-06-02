@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import {useState} from 'react'
 import './App.css'
 
 function App() {
 
+const [inputText, setInputText] =useState('') 
+const [todos , setTodos] = useState([])
+
   return(
-    <div>To-do app</div>
+    <>
+      <div>To-do app</div>
+      <input type="text" placeholder="Enter a task" value={inputText} onChange={(event) => setInputText(event.target.value)}/>
+      <button>Add Task</button>
+    </>
+
   )
 }
 
