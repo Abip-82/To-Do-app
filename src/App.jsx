@@ -1,6 +1,15 @@
 import { useState } from "react";
 import "./App.css";
 
+function TodoItem(props){
+  return(
+    <div>
+      {props.todo}
+      <button onClick={() => props.deletetodo(props.index)}>Delete</button>
+    </div>
+  )
+}
+
 function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
@@ -32,8 +41,7 @@ function App() {
         <h2>To DO List:</h2>
         <ul>
           {todos.map((todo, index) => (
-            <li key={index}>{todo}
-            <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+            <li key={index}> <TodoItem todo={todo} index={index} deletetodo={handleDeleteTodo} />
             </li>
           ))}
         </ul>
