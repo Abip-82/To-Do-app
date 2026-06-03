@@ -1,8 +1,8 @@
 function TodoItem({todo, index, deletetodo}){
   return(
-    <div>
+    <div className="task-item">
       {todo}
-      <button onClick={() =>deletetodo(index)}>Delete</button>
+      <button className="btn-icon" onClick={() =>deletetodo(index)}>Delete</button>
     </div>
   )
 }

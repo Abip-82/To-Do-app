@@ -20,24 +20,25 @@ function App() {
   }
 
   return (
-    <div>
-      <h1 align = "center">To-do app</h1>
-      <input
-        type="text"
-        placeholder="Enter a task"
-        value={inputText}
-        onChange={(event) => setInputText(event.target.value)}
-      />
-      <button onClick={handleAddTodo}>Add Task</button>
-      <div>
-        <h2>To DO List:</h2>
-        <ul>
-          {todos.map((todo, index) => (
-            <li key={index}> <TodoItem todo={todo} index={index} deletetodo={handleDeleteTodo} />
-            </li>
-          ))}
-        </ul>
+    <div className ="todo-wrapper">
+      <h1 className="todo-title">To-do app</h1>
+      <div className = "input-container">
+        <input className="todo-input"
+          type="text"
+          placeholder="Enter a task"
+          value={inputText}
+          onChange={(event) => setInputText(event.target.value)}
+        />
+        <button className = "btn-add" onClick={handleAddTodo}>Add Task</button>
       </div>
+        <div className="tasks-list-container">
+          <ul>
+            {todos.map((todo, index) => (
+              <li key={index}> <TodoItem todo={todo} index={index} deletetodo={handleDeleteTodo} />
+              </li>
+            ))}
+          </ul>
+        </div>
     </div>
   );
 }
