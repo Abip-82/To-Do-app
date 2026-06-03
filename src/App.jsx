@@ -20,8 +20,8 @@ function App() {
   }
 
   return (
-    <>
-      <div>To-do app</div>
+    <div>
+      <h1 align = "center">To-do app</h1>
       <input
         type="text"
         placeholder="Enter a task"
@@ -38,7 +38,7 @@ function App() {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,8 +1,8 @@
-function TodoItem(props){
+function TodoItem({todo, index, deletetodo}){
   return(
     <div>
-      {props.todo}
-      <button onClick={() => props.deletetodo(props.index)}>Delete</button>
+      {todo}
+      <button onClick={() =>deletetodo(index)}>Delete</button>
     </div>
   )
 }
